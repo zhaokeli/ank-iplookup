@@ -1,3 +1,5 @@
 <?php
 $loader = require __DIR__ . '/vendor/autoload.php';
-var_dump(Zhuzhichao\IpLocationZh\Ip::find('113.140.250.222'));
+$ip     = new \ank\IpLookup();
+$info   = $ip->getInfo('47.56.171.51', 0);
+var_dump($info);
