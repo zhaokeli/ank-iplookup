@@ -23,7 +23,7 @@
     },
     "require":
     {
-        "zhuzhichao/ip-location-zh": "dev-master",
-        "zoujingli/ip2region": "dev-master"
+        "zhuzhichao/ip-location-zh": "^2.0",
+        "zoujingli/ip2region": "^1.0"
     }
 }
