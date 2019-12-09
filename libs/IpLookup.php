@@ -20,20 +20,21 @@ class IpLookup
             $info             = $ip2region->btreeSearch($ip);
             $info             = explode('|', $info['region']);
             $data['country']  = $info[0];
-            $data['province'] = $info[2];
-            $data['city']     = $info[3];
-            $data['isp']      = $info[4];
+            $data['province'] = $info[2] ?: $info[0];
+            $data['city']     = $info[3] ?: '';
+            $data['isp']      = $info[4] ?: '';
             // var_dump($info, true);
         } else {
             $info = Ip::find($ip);
-            var_dump($info);
+            // var_dump($info);
             // $iplocation       = new IpLocation();
             // $info             = $iplocation->getlocation($ip);
             $data['country']  = $info[0];
-            $data['province'] = $info[1];
-            $data['city']     = $info[2];
-            $data['isp']      = $info[3];
+            $data['province'] = $info[1] ?: $info[0];
+            $data['city']     = $info[2] ?: '';
+            $data['isp']      = $info[3] ?: '';
         }
+
         return $data;
     }
 }
