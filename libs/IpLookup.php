@@ -37,4 +37,20 @@ class IpLookup
 
         return $data;
     }
+
+    public function getLocation($ip, $type = 0, $fenge = ' ', $num = 3)
+    {
+        $info = $this->getInfo($ip, $type);
+
+        $num = $num > 4 ? 4 : $num;
+        $str = '';
+        foreach ($info as $key => $value) {
+            if ($num == 0) {
+                break;
+            }
+            $str .= $fenge . ($value ?: '');
+        }
+
+        return trim(preg_replace('/' . $fenge . '+/i', $fenge, $str), $fenge);
+    }
 }
