@@ -22,7 +22,9 @@
     },
     "require":
     {
+        "php":">=7.4",
         "zhuzhichao/ip-location-zh": "^2.0",
         "zoujingli/ip2region": "^1.0"
-    }
+    },
+    "description": ""
 }
